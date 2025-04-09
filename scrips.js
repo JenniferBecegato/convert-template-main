@@ -7,7 +7,7 @@ const amount = document.getElementById ("amount")
 const currency = document.getElementById("currency")
 const form = document.querySelector("form") //obtendo os elementos do formulário
 const footer = document.querySelector("main footer")
-const description = document.getElementById("drscription")
+const description = document.getElementById("description")
 const result = document.getElementById("result")
 
 //Manipulando o input amount para receber somente números:
@@ -36,7 +36,7 @@ form.onsubmit = (event) =>
     //console.log(currency.value)
 
     //identificar qual a moeda que será selecionada:
-    switch(currency.valeu)
+    switch(currency.value)
     {
         case "USD":
             convertCurrency(amount.value,USD,"US$")
@@ -64,7 +64,7 @@ function convertCurrency(amount,price,symbol)
         // Calculando, garantindo que o total é um número, formatando e exibindo o resultado total:
         let total = amount * price
         
-        is (isNaN(total))
+        if (isNaN(total))
         {
             return alert ("Por favor digite o valor corretamente")
         }
@@ -73,7 +73,7 @@ function convertCurrency(amount,price,symbol)
         result.textContent = `${total} Reais `;
 
         //Aplica a classe que exibe o footer para mostrar o resultado 
-        footer.classList.add(show-result); 
+        footer.classList.add("show-result"); 
     }
     catch(error)
     {
